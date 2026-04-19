@@ -1,0 +1,21 @@
+# 1. 创建一个新的空文件（作为稀疏文件的容器）
+$file = New-Object -TypeName System.IO.FileStream -ArgumentList "C:\path\to\your\sparse_file.bin", Create, ReadWrite
+
+# 2. 将其设置为稀疏文件（关键步骤！）
+$file.SetLength(100GB) # 设置逻辑大小为 100GB
+
+# 3. 在文件开头写入一些文字（“HelloSparse”）
+$encoder = [System.Text.Encoding]::UTF8
+$bytes = $encoder.GetBytes("HelloSparse")
+$file.Write($bytes, 0, $bytes.Length)
+
+# 4. 非常重要：关闭文件，释放资源
+$file.Close()
+
+# 5. 验证文件属性
+$created_file = Get-Item "C:\path\to\your\sparse_file.bin"
+Write-Host "逻辑大小: $($created_file.Length) bytes"
+Write-Host "占用空间: $((Get-ChildItem $created_file.FullName).Length) bytes" # 这个命令可能不准确显示稀疏文件的实际磁盘占用
+
+# 6. 查看文件内容（确认文字已写入）
+Get-Content "C:\path\to\your\sparse_file.bin" -Encoding UTF8 -TotalCount 20

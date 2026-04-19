@@ -1,0 +1,114 @@
+header div{
+    border: 2px solid;
+    box-shadow: 10px 10px 5px black;
+
+    
+}
+
+.imgborder{
+    /* 边界图片 */
+    border-image: url("/1.png") 30 30 round;
+    -webkit-border-image: url("/1.png") 30 30 round;
+    -o-border-image:url("/1.png") 30 30 round ;
+
+    
+}
+
+.spborder{
+    border: 2px solid;
+    border-radius: 5px 10px;
+    background-image: linear-gradient(black,white);
+    background-image: linear-gradient(to right ,red ,yellow);
+}
+
+.textdemo{
+    text-shadow: 5px 5px 5px black;
+    box-shadow: 10px 10px 5px grey;
+    word-wrap: break-word;
+}
+
+@font-face{
+    font-family: MYFONT;
+    src: url();
+}
+
+.d2bianhuan{
+    transform: rotate(30deg);
+    padding-top: 100px;
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform: matrix(0,866,0.5,-0.5,0.866,0,0);
+
+    transform: translate(50px,100px);
+    transition: 2s;
+    transition: width 2s,height 3s, transform 2s;
+}
+
+.border{
+    border: 2px solid black;
+}
+
+.frams{
+    width: 50px;
+    animation: myframs 5s;
+    /* -webkit-animation: myframs 5s; */
+}
+
+@keyframes myframs{
+    /* from {background: red;}
+    to {background: yellow;} */
+    0% {left: 0px;top:0px;}
+    25%{left:200px;top:0px;}
+    50%{background: yellow; left:200px;top:200px;}
+    75%{left:0px;top:200px;}
+    100%{left: 0px;top:0px;}
+}
+
+.muti{
+    column-count: 3;
+    column-gap: 40px;
+}
+.muti p{
+    background: red;
+}
+
+
+
+
+
+/* 头像 */
+.touxiangdiv{
+    margin-left: 100px;
+}
+
+.touxiangimg{
+    --s:200px;
+    --c1:yellow;
+    --c2:red;
+    --b:5px;
+    --f:1;
+    --shrink:calc((var(--s) / var(--f) - var(--s))/ 2 - var(--b));
+    width: var(--s);
+    height: var(--s);
+    cursor: pointer;
+    transition: 0.5s;
+    padding-top: 100px;
+    outline: var(--b) solid var(--c2);
+    outline-offset: var(--shrink);
+    border-radius: 0 0 999px 999px;
+    transform: scale(var(--f));
+    background: radial-gradient(
+        circle closest-side,
+        var(--c1) calc(99% - var(--b)),
+        var(--c2) calc(100% - var(--b)),
+        var(--c2) 99%,
+        transparent 100%)content-box no-repeat center/ calc(100% / var(--f));
+    mask:linear-gradient(black 0 0)no-repeat center
+        calc(0px - var(--shrink)) / calc(100% / var(--f) - (2 * var(--b))) 50%,
+        radial-gradient(circle closest-side,black 99%,transparent) content-box no-repeat center/ calc(100% / var(--f));
+}
+
+.touxiangimg:hover{
+    /* transform: scale(1.35); */
+    --f:1.35;
+}

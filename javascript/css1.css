@@ -1,0 +1,205 @@
+body{
+    background-color: aquamarine;
+    /* background-image:url("1.png") ; */
+    /* background-repeat: repeat-x; */
+    /* background-position:right top ; */
+    /* background-attachment:scroll; */
+
+}
+
+p{
+    text-align: center;
+    text-transform:capitalize;
+    text-decoration:underline;
+    /* 缩进 */
+    text-indent: 50px;
+    /* text-shadow: 5px; */
+
+    font-family: 'Times New Roman', Times, serif;
+    font-variant: small-caps;
+
+    /* 边框 */
+    border: 0px;
+    /* border-radius: 5px; */
+    border-style:solid;
+    border-left-width: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    /* outline轮廓 */
+    /* outline: green dotted thick; */
+
+    /* display显示 visibility可见性 */
+    /* display: block; */
+    visibility: inherit;
+
+    /* position定位 */
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+    
+    /*  */
+
+}
+
+
+
+img{
+    /* 垂直对齐图像 */
+    vertical-align: middle;
+    /* 透明度 */
+    /* opacity: 0.4; */
+}
+
+a{
+    text-decoration: unset;
+    /* 边框 */
+    border: 2px,solid,black;
+
+}
+a:link{
+    /* 未访问链接 */
+    color: blue;
+}
+a:visited{
+    /* 已访问链接 */
+    color: black;
+}
+a:hover{
+    /* 鼠标移到连接上 */
+    color: brown;
+    text-decoration: underline;
+}
+a:active{
+    /* 鼠标点击时 */
+    color: crimson;
+}
+
+.leftboder{
+    /* 边框 */
+    border: 0px;
+    /* border-radius: 5px; */
+    border-style:solid;
+    border-left-width: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.overflowdemo{
+    background-color: lightblue;
+    width: 150px;
+    height: 60px;
+    overflow: auto;
+}
+
+.floatdemo{
+    float: right;
+}
+
+.margindemo{
+    border: 2px,solid,black;
+    margin:auto;
+    width: 50%;
+    height: 160px;
+
+    /* 居中 */
+
+}
+.margindemo img{
+    display: block;
+    margin: auto;
+    width: 50%;
+    /* display: none; */
+}
+
+
+.nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    height: 10%;
+    position: fixed;
+    overflow: no;
+    /* z-index: 4; */
+
+    /* display:inline; */
+}
+/* .nav li{
+    display: inline;
+} */
+.nav a{
+    display: block;
+    width: 60px;
+    border: none;
+    background-color: aliceblue;
+    padding-left: 10px;
+    color: green;
+}
+.nav a:hover{
+    background-color: black;
+    color: white;
+}
+.nav{
+
+}
+
+.tooltipdemo{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.tooltiptext{
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px 5px;
+
+    position: absolute;
+    z-index: 1;
+
+    opacity: 0;
+    transition: opacity 1s;
+}
+.tooltipdemo:hover .tooltiptext{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 属性选择器 */
+[type]{
+    /* 选择所有具有 type 属性的元素 */
+}
+[type="text"]{
+    /* 选择所有 type 属性等于 text 的元素 */
+}
+[calss~="button"]{
+    /* 选择属性值中包含 button 的元素 */
+}
+[lang|="en"]{
+    /* 选择所有 lang 属性是 en 或者以 en- 开头的元素 */
+}
+[href^="https"]{
+    /* 选择所有 href 属性以 https 开头的链接 */
+}
+[title*="tutorial"]{
+    /* 选择所有 title 属性包含 tutorial 的元素 */
+}
+[src$=".jpg"]{
+    /* 选择所有 src 属性以 jpg 结尾的图片*/
+}
+
+
+/* 计数器 */
+body{
+    counter-reset: section;
+}
+p::before{
+    counter-increment: section;
+    content: "s " counter(section) ": ";
+}
+
+.inline{
+    display: inline;
+}
+

@@ -1,0 +1,1 @@
+yay -S --needed waybar-cava-git cava grim slurp swappy wf-recorder hyprpicker wayber-niri-tsakbar-git waybar-module-pacman-updates-git ddcutil-service blueberry wlogout
