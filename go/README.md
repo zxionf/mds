@@ -122,7 +122,7 @@ type Book struct {
 var book Book
 var ptr *Book
 ptr = &book
-fmt.Print(ptr)
+fmt.Print(&ptr)
 ```
 
 ### 切片 Slice
@@ -135,4 +135,105 @@ var a []int
 slice1 := make([]T, length, capacity)
 // 初始化
 s :=[] int {1,2,3 }
+```
+
+```go
+// 初始化切片s为数组arr的引用
+s := arr[:]
+// 将 arr 中从下标 startIndex 到 endIndex-1 下的元素创建为一个新的切片
+s := arr[startIndex:]
+```
+
+### range
+
+```go
+// map
+map_variable := make(map[KeyType]ValueType, initialCapacity)
+map1 := map[string]int{ "apple":1 }
+delete(map1, "apple")
+// 通道
+ch := make(chan int, 2)
+ch <- 1
+ch <- 2
+close(ch)
+for v := range ch {
+    fmt.Println(v)
+}
+```
+
+### 类型转换
+
+```go
+float32(n)
+```
+
+### 接口
+
+```go
+type interface_name interface {
+   method_name1 [return_type]
+   ...
+}
+func (struct_name_variable struct_name) method_name1() [return_type] {
+   /* 方法实现 */
+}
+
+// 类型断言
+value := i.(Type)
+// 带检查的类型断言
+value, ok := iface.(Type)
+```
+
+接口包含了连个部分：动态类型，动态值
+
+```go
+var i interface{} = 17
+fmt.Printf("Dynamic type: %T, Dynamic value: %v\n", i, i)
+```
+
+### 泛型
+
+```go
+// 基本语法结构
+func 函数名[T 约束](参数 T) 返回值类型 {
+    // 函数体
+}
+type 类型名[T 约束] struct {
+    // 结构体字段
+}
+```
+
+T: 表示 Type(类型)  
+K: 表示 Key(键)  
+V: 表示 Value(值)  
+E: 表示 Element(元素)  
+
+#### 内置约束
+
+- `any` 约束  
+`any` 是空接口 `interface{}` 的别名  
+
+- `comparable` 约束  
+`comparable` 表示类型支持 `==` 和 `!=` 操作符  
+
+- 联合约束(Union Constraints)  
+使用 `|` 运算符组合多个类型  
+
+    ```go
+    type Number interface {
+        int | int8 | int16 | int32 | int64 |
+        uint | uint8 | uint16 | uint32 | uint64 |
+        float32 | float64
+    }
+    ```
+
+### 并发
+
+```go
+go fun()
+```
+
+```go
+ch := make(chan int)
+ch := make(chan int, 100)
 ```
