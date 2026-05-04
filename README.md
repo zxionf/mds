@@ -15,6 +15,7 @@ notes
 [gradle](./null)  
 [maven](./null)  
 [pnpm](./pnpm/README.md)  
+[go](./go/gocli.md)  
 [cargo](./null)  
 [blender](./blender/README.md)  
 [null](./null)  
