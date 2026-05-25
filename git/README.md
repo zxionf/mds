@@ -18,3 +18,5 @@ git stash list
 git stash pop ,恢复并删除stash内容  
 git stash apply ,恢复stash内容  
 git stash drop ,删除stash内容  
+git checkout --orphan newname ,创建孤儿分支  
+git rm -r --cached build/ ,排除已跟踪的文件夹  

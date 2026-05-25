@@ -37,6 +37,9 @@ mv name new-name
 du -sh */
 # 查看当前目录下文件大小
 du -sh */ | sort -hr 
+
+# 查看所有被使用的端口
+ss -tunlp
 ```
 
 ## 技巧

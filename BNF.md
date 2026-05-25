@@ -1,12 +1,15 @@
 # BNF 范式
+
 定义编程语言以及其他形式语言的符号系统
 
 ## 核心组件
+
 一组非终结符号  
 一组终结符号  
 一系列派生规则
 
 ## 自述
+
 ```bnf
 <syntax>         ::= <rule> | <rule> <syntax>
 <rule>           ::= <opt-whitespace> "<" <rule-name> ">" <opt-whitespace> "::=" <opt-whitespace> <expression> <line-end>
