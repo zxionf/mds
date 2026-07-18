@@ -17,7 +17,7 @@ notes
 [pnpm](./pnpm/README.md)  
 [python](./python/pip.md)
 [go](./go/gocli.md)  
-[cargo](./null)  
+[cargo](./cargo/README.md)  
 [blender](./blender/README.md)  
 [null](./null)  
 
@@ -59,3 +59,4 @@ notes
 [正则表达式](./regex/正则表达式.md)  
 [spring概念](./spring/README.md)  
 [GNU/linux](./linux/README.md)  
+[OTR](./otr.md)
