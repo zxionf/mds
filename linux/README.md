@@ -40,6 +40,8 @@ du -sh */ | sort -hr
 
 # 查看所有被使用的端口
 ss -tunlp
+# 查看所有ssh连接
+ss -tn state established '( dport = :22 or sport = :22 )'
 ```
 
 ## 技巧
