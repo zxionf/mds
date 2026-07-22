@@ -29,6 +29,18 @@ match value {
 }
 ```
 
+```rust
+let v = Some(0u8);
+if let Some(5) = v {
+    println!("5");
+}
+
+// 模式匹配并将值解构绑定到x
+if let Some(x) = v {
+    println!("{:?}", x);
+}
+```
+
 ### 2.2 循环
 
 ```rust
@@ -41,6 +53,95 @@ while condition {}
 
 ```rust
 for item in collection {}
+```
+
+### 2.3 结构体
+
+```rust
+struct User {
+    username: String,
+    email: String,
+}
+
+let mut user = User {
+    username: String::from("zxionf"),
+    email: String::from("<EMAIL>"),
+};
+// 字段相同可以简写
+println!("{}", user.username);
+
+// 更新语法
+let user2 = User {
+    username: user.username,
+    ..user
+};
+```
+
+tuple struct
+
+```rust
+struct Color(i32, i32, i32);
+let color = Color(255, 0, 0);
+```
+
+### 2.4 函数
+
+```rust
+fn name(arg1: type, arg2: type) -> return_type {}
+```
+
+### 2.5 方法
+
+```rust
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+```
+
+### 2.6 关联函数
+
+```rust
+impl Rectangle {
+    fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    }
+}
+
+let square = Rectangle::square(10);
+```
+
+### 2.7 枚举
+
+```rust
+enmu Color {
+    Red, Black,
+}
+enmu IPAddr {
+    V4(u8, u8, u8, u8),
+    V6(String),
+}
+// 枚举同样可以实现方法
+```
+
+### 2.8 结构组织
+
+`Package` `包` 构建 测试 共享 crate  
+`Crate` `单元包` 一个模块树，他可以产生一个library或可执行文件  
+`Module` `模块` 逻辑分组  
+
+放在`src/bin`目录下的每个文件都是单独的binary carte
+
+```rust
 ```
 
 ## 3 语法特性
@@ -113,3 +214,21 @@ let s2 = s1;
 - 两个或者多个指针同时访问同一个数据
 - 至少有一个指针用于写入数据
 - 没有使用任何机制来同步对数据的访问
+
+### 3.5  Option枚举
+
+`Option<T>` 是一个枚举，它表示一个值可能存在也可能不存在  
+
+被定义为
+
+```rust
+enmu Option<T> {
+    Some(T),
+    None,
+}
+```
+
+```rust
+let some_number = Some(5);
+let n : Option<i32> = None;
+```
