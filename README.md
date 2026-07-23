@@ -49,7 +49,8 @@ notes
 
 ## 数据结构与算法
 
-[数据结构](./datastucture/int.md)
+[数据结构](./datastucture/README.md)  
+[算法](./algorithm/README.md)
 
 ## 文
 
